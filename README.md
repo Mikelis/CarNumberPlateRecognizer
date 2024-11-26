@@ -7,13 +7,12 @@ To use the library:
 
 Add it in your root build.gradle at the end of repositories:
 
-	dependencyResolutionManagement {
-		repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-		repositories {
-			mavenCentral()
-			maven { url 'https://jitpack.io' }
-		}
-	}
+allprojects {
+ repositories {
+    mavenCentral()
+    maven { url "https://jitpack.io" }  <--- Add this
+ }
+}
 
 Add the dependency
 
