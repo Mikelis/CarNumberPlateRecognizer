@@ -7,7 +7,6 @@ plugins {
 }
 
 android {
-
     publishing {
         singleVariant("release") {
             withSourcesJar()
