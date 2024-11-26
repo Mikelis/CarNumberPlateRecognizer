@@ -20,4 +20,11 @@ Add the dependency
 	        implementation 'com.github.Mikelis:CarNumberPlateRecognizer:1.0.4'
 	}
 
+Usage:
+
+	NumberPlateRecognizer().recognizeTextFromImage(context, uri, callback = { recognizedText ->
+	                            Toast.makeText(context, recognizedText, Toast.LENGTH_LONG).show()
+	                        })
+
+
 ![WhatsApp Image 2024-11-26 at 14 40 51](https://github.com/user-attachments/assets/fc4fcdd4-a52a-46f6-b22f-b4047da1c78b)
