@@ -13,6 +13,7 @@ android {
             withSourcesJar()
             withJavadocJar()
         }
+
     }
 
     namespace = "lv.mikeliskaneps.carnumberplaterecognizer"
@@ -51,5 +52,16 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation (libs.text.recognition)
+    implementation(libs.text.recognition)
+}
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("maven") {
+                groupId = "lv.mikelis.kaneps"
+                artifactId = "carnumberplaterecognizer"
+                version = "1.0.2"
+            }
+        }
+    }
 }
