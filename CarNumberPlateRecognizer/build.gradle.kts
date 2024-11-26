@@ -8,9 +8,11 @@ plugins {
 
 android {
     publishing {
-        singleVariant("release") {
-            withSourcesJar()
-            withJavadocJar()
+        publishing {
+            multipleVariants {
+                allVariants()
+                withJavadocJar()
+            }
         }
 
     }
@@ -59,7 +61,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "lv.mikeliskaneps"
             artifactId = "carnumberplaterecognizer"
-            version = "1.0.3"
+            version = "1.0.5"
 
             afterEvaluate {
                 from(components["release"])
