@@ -54,13 +54,16 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.text.recognition)
 }
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("maven") {
-                groupId = "lv.mikelis.kaneps"
-                artifactId = "carnumberplaterecognizer"
-                version = "1.0.2"
+
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = "lv.mikeliskaneps"
+            artifactId = "carnumberplaterecognizer"
+            version = "1.0.3"
+
+            afterEvaluate {
+                from(components["release"])
             }
         }
     }
