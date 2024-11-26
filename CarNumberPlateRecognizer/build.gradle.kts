@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.utils.createPublishingInfoForLibrary
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
@@ -5,6 +7,14 @@ plugins {
 }
 
 android {
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
+
     namespace = "lv.mikeliskaneps.carnumberplaterecognizer"
     compileSdk = 34
 
